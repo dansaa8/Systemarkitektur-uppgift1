@@ -7,22 +7,20 @@ import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
-public class FridayDiscount extends BaseDiscount {
+public class MilkDiscount extends BaseDiscount {
 
-    public FridayDiscount(Discount nextDiscount) {
+    public MilkDiscount(Discount nextDiscount) {
         super(nextDiscount);
-        description = "Friday - 10% off";
+        description = "Milk - 5% off";
     }
 
     @Override
     protected boolean isApplicable(Product product) {
-        String dayName = LocalDate.now().getDayOfWeek()
-                .getDisplayName(TextStyle.FULL, Locale.ENGLISH);
-        return dayName.equals("Saturday");
+        return product.name().equalsIgnoreCase("Milk");
     }
 
     @Override
     protected double calculateDiscount(Product product) {
-        return product.price() * 0.10;
+        return product.price() * 0.05;
     }
 }
