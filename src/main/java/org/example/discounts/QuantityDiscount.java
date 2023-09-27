@@ -12,7 +12,7 @@ public class QuantityDiscount extends BaseDiscount {
 
     @Override
     protected boolean isApplicable(Product product) {
-        return product.quantity() >= 5;
+        return (product.quantity() >= 5);
     }
 
     @Override

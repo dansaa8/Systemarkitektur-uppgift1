@@ -12,6 +12,7 @@ public abstract class BaseDiscount implements Discount {
 
     @Override
     public double apply(Product product) {
+        if (product == null) return 0;
 
         if (nextDiscount != null)
             return isApplicable(product) ?
