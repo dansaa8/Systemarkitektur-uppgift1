@@ -25,7 +25,7 @@ class FridayDiscountTest {
 
         Product p = new Product("Taco", 60, 5);
 
-        double expected = p.price() * p.quantity() * 0.9;
+        double expected = p.price() * p.quantity() * 0.9; // 10% off
 
         double appliedDiscount = (p.price() * p.quantity()) - new FridayDiscount("Friday").apply(p);
 
@@ -39,7 +39,7 @@ class FridayDiscountTest {
 
         Product p = new Product("Taco", 60, 5);
 
-        double expected = p.price() * p.quantity() * 0.8;
+        double expected = p.price() * p.quantity() * 0.8; // 20% off (double discount)
 
         double appliedDiscount = (p.price() * p.quantity()) - twoFriDiscs.apply(p);
 
