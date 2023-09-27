@@ -14,10 +14,22 @@ class FridayDiscountTest {
         FridayDiscount fridayDiscount = new FridayDiscount("Thursday");
         Product p = new Product("Tomatsöppa", 15, 3);
 
-        double expectedTotal =  p.price() * p.quantity();
-        System.out.println(fridayDiscount.apply(p));
-        double appliedDiscount = expectedTotal - fridayDiscount.apply(p);
+        double expected =  p.price() * p.quantity();
 
-        assertThat(appliedDiscount).isEqualTo(expectedTotal);
+        double appliedDiscount = expected - fridayDiscount.apply(p);
+
+        assertThat(appliedDiscount).isEqualTo(expected);
+    }
+
+    @Test
+    void ifTodayIsFridayThenApplyDiscount() {
+
+        Product p = new Product("Taco", 60, 5);
+
+        double expected = p.price() * p.quantity() * 0.9;
+
+        double appliedDiscount = (p.price() * p.quantity()) - new FridayDiscount("Friday").apply(p);
+
+        assertThat(appliedDiscount).isEqualTo(expected);
     }
 }

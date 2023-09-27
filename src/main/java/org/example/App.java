@@ -14,8 +14,9 @@ public class App {
 //        System.out.println(combined.apply(myProduct) * myProduct.quantity());
 //
 //        System.out.println(combined.getDescription(myProduct));
-        Product product = new Product("Milk", 500, 5);
-       double totalPrice = (product.price() * 5) - new FridayDiscount().apply(product);
+        Product product = new Product("Taco", 60, 1);
+       double totalPrice = (product.price() * 1) - new FridayDiscount("Friday").apply(product);
+        System.out.println(totalPrice);
 
     }
 }

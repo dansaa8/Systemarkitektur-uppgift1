@@ -24,12 +24,11 @@ public class FridayDiscount extends BaseDiscount {
 
     @Override
     protected boolean isApplicable(Product product) {
-        System.out.println(today);
         return today.equals("Friday");
     }
 
     @Override
     protected double calculateDiscount(Product product) {
-        return product.price() * 0.10;
+        return product.price() * product.quantity() * 0.10;
     }
 }
