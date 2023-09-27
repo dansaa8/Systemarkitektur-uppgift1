@@ -15,12 +15,14 @@ public class FridayDiscount extends BaseDiscount {
         today = Utils.getNameOfToday();
     }
 
-    public FridayDiscount(String day) {today = day;} // used for testing
+    public FridayDiscount(String day) {
+        today = day;
+    } // used for testing
 
-    public FridayDiscount(Discount nextDiscount, String day) { // used for testing.
+    public FridayDiscount(Discount nextDiscount, String day) {
         super(nextDiscount);
         today = day;
-    }
+    }// used for testing.
 
     @Override
     protected boolean isApplicable(Product product) {

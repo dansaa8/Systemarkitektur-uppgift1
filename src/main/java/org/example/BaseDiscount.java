@@ -13,8 +13,8 @@ public abstract class BaseDiscount implements Discount {
 
         if (nextDiscount != null)
             return isApplicable(product) ?
-                    nextDiscount.apply(product) - calculateDiscount(product) :
-                    product.price();
+                    calculateDiscount(product) + nextDiscount.apply(product) :
+                    0;
 
         return isApplicable(product) ?
                 calculateDiscount(product) :
