@@ -6,16 +6,16 @@ import java.util.Locale;
 
 public class App {
     public static void main(String[] args) {
-        Product myProduct = new Product("Milk", 500, 5);
-        FridayDiscount combined = new FridayDiscount(new MilkDiscount(null));
 
-        QuantityDiscount quantity = new QuantityDiscount(null);
+//        FridayDiscount combined = new FridayDiscount(new MilkDiscount(null));
+//
+//        QuantityDiscount quantity = new QuantityDiscount(null);
 
 //        System.out.println(combined.apply(myProduct) * myProduct.quantity());
 //
 //        System.out.println(combined.getDescription(myProduct));
-
-        System.out.println(quantity.apply(myProduct) * myProduct.quantity());
+        Product product = new Product("Milk", 500, 5);
+       double totalPrice = (product.price() * 5) - new FridayDiscount().apply(product);
 
     }
 }

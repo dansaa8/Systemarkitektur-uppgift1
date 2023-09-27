@@ -1,6 +1,7 @@
 package org.example;
 
 public class QuantityDiscount extends BaseDiscount {
+    public QuantityDiscount(){super();}
 
     public QuantityDiscount(Discount nextDiscount) {
         super(nextDiscount);

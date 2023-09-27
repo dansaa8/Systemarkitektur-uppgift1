@@ -1,6 +1,8 @@
 package org.example;
 
 public class MilkDiscount extends BaseDiscount {
+    public MilkDiscount(){super();}
+
 
     public MilkDiscount(Discount nextDiscount) {
         super(nextDiscount);
