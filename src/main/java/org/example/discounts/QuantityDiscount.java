@@ -1,4 +1,6 @@
-package org.example;
+package org.example.discounts;
+
+import org.example.Product;
 
 public class QuantityDiscount extends BaseDiscount {
     public QuantityDiscount(){super();}

@@ -1,4 +1,6 @@
-package org.example;
+package org.example.discounts;
+
+import org.example.Product;
 
 public class MilkDiscount extends BaseDiscount {
     public MilkDiscount(){super();}
