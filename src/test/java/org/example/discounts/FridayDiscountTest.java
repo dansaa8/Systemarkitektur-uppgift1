@@ -1,9 +1,7 @@
 package org.example.discounts;
 
 import org.example.Product;
-import org.example.discounts.FridayDiscount;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
