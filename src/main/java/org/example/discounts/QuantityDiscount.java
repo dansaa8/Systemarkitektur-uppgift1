@@ -17,6 +17,6 @@ public class QuantityDiscount extends BaseDiscount {
 
     @Override
     protected double calculateDiscount(Product product) {
-        return product.price() - (10 * product.quantity());
+        return 10 * product.quantity();
     }
 }

@@ -19,17 +19,17 @@ class QuantityDiscountTest {
         assertThat(appliedDiscount).isEqualTo(expected);
     }
 
-//    @Test
-//    void ifProdNameIsMilkThenApplyDiscount() {
-//
-//        Product p = new Product("Milk", 21, 7);
-//
-//        double expected = p.price() * p.quantity() * 0.95; // 5% off
-//
-//        double appliedDiscount = (p.price() * p.quantity()) - new MilkDiscount().apply(p);
-//
-//        assertThat(appliedDiscount).isEqualTo(expected);
-//    }
+    @Test
+    void ifQuantityIsFiveApplyDiscount() {
+
+        Product p = new Product("Tomat", 39, 5);
+
+        double expected = p.price() * p.quantity() - (p.quantity() * 10); // 10 for every single item.
+
+        double appliedDiscount = (p.price() * p.quantity()) - new QuantityDiscount().apply(p);
+
+        assertThat(appliedDiscount).isEqualTo(expected);
+    }
 //
 //    @Test
 //    void applyTwoMilkDiscountsReturnDoubleTheDiscount() {
