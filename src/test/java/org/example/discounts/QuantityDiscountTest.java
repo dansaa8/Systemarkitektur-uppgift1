@@ -42,4 +42,17 @@ class QuantityDiscountTest {
 
         assertThat(appliedDiscount).isEqualTo(expected);
     }
+
+    @Test
+    void applyTwoQuantityDiscountsReturnDoubleTheDiscount() {
+        QuantityDiscount quantityDisc = new QuantityDiscount();
+        QuantityDiscount twoQuantityDiscs = new QuantityDiscount(quantityDisc);
+        Product p = new Product("Coca cola", 19, 9);
+
+        double expected = p.price() * p.quantity() - (p.quantity() * 20); // 20 for every single item (doubled).
+
+        double appliedDiscount = (p.price() * p.quantity()) - twoQuantityDiscs.apply(p);
+
+        assertThat(appliedDiscount).isEqualTo(expected);
+    }
 }
