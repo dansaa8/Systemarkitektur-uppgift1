@@ -17,7 +17,7 @@ public abstract class BaseDiscount implements Discount {
         if (nextDiscount != null)
             return isApplicable(product) ?
                     calculateDiscount(product) + nextDiscount.apply(product) :
-                    0;
+                    nextDiscount.apply(product);
 
         return isApplicable(product) ?
                 calculateDiscount(product) :
@@ -28,13 +28,14 @@ public abstract class BaseDiscount implements Discount {
     public String getDescription(Product product) {
         if (nextDiscount != null)
             return isApplicable(product) ?
-                    this.description + ",\n" + nextDiscount.getDescription(product) :
+                    this.description + ", " + nextDiscount.getDescription(product) :
                     nextDiscount.getDescription(product);
 
         return isApplicable(product) ?
-                this.description :
+                this.description + ", " :
                 "";
     }
+
 
     protected abstract boolean isApplicable(Product product);
     protected abstract double calculateDiscount(Product product);

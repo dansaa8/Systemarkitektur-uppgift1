@@ -3,10 +3,14 @@ package org.example.discounts;
 import org.example.Product;
 
 public class MilkDiscount extends BaseDiscount {
-    public MilkDiscount(){super();}
+
+    public MilkDiscount(){
+        description = "Milk - 5% off";
+    }
 
 
     public MilkDiscount(Discount nextDiscount) {
+
         super(nextDiscount);
         description = "Milk - 5% off";
     }

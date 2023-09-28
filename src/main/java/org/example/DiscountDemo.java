@@ -17,5 +17,9 @@ public class DiscountDemo {
         System.out.println("Discounts for cheese: " + discount.apply(p1));
         System.out.println("Discounts for milk: " + combined1.apply(p2));
         System.out.println("Discounts for beer: " + combined2.apply(p3));
+
+        System.out.println("Discounts for cheese: " + discount.getDescription(p1));
+        System.out.println("Discounts for milk: " + combined1.getDescription(p2));
+        System.out.println("Discounts for beer: " + combined2.getDescription(p3));
     }
 }

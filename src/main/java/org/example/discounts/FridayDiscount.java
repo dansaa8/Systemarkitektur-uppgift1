@@ -5,22 +5,26 @@ import org.example.Utils;
 
 public class FridayDiscount extends BaseDiscount {
     String today;
-    String description = "Friday - 10% off";
-
-    public FridayDiscount(){today = Utils.getNameOfToday();}
+    public FridayDiscount(){
+        today = Utils.getNameOfToday();
+        description = "Friday - 10% off";
+    }
 
     public FridayDiscount(Discount nextDiscount) {
         super(nextDiscount);
         today = Utils.getNameOfToday();
+        description = "Friday - 10% off";
     }
 
     public FridayDiscount(String day) {
         today = day;
+        description = "Friday - 10% off";
     } // used for testing
 
     public FridayDiscount(Discount nextDiscount, String day) {
         super(nextDiscount);
         today = day;
+        description = "Friday - 10% off";
     }// used for testing.
 
     @Override
