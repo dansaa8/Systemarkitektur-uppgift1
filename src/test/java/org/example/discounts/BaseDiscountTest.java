@@ -44,7 +44,7 @@ class BaseDiscountTest {
     @Test
     void onlyReturnTheCorrectDescriptionWhenOneDiscountIsApplied() {
         Product milkProduct = new Product("Milk", 19, 4);
-        var combined = new MilkDiscount(new FridayDiscount(new QuantityDiscount(), "Wednesday"));
+        var combined = new MilkDiscount(new FridayDiscount("Wednesday",new QuantityDiscount()));
 
         assertThat(combined.getDescription(milkProduct)).isEqualTo("Milk - 5% off");
     }
@@ -52,7 +52,7 @@ class BaseDiscountTest {
     @Test
     void onlyReturnTheCorrectDescriptionWhenTwoDiscountsAreApplied() {
         Product beerProduct = new Product("Beer", 19, 6);
-        var combined = new MilkDiscount(new FridayDiscount(new QuantityDiscount(), "Friday"));
+        var combined = new MilkDiscount(new FridayDiscount("Friday", new QuantityDiscount()));
         System.out.println(combined.apply(beerProduct));
 
         assertThat(combined.getDescription(beerProduct))

@@ -11,7 +11,7 @@ public class DiscountDemo {
         Product p3 = new Product("Beer", 17, 6);
 
         var discount = new FridayDiscount("Friday");
-        var combined1 = new MilkDiscount(new FridayDiscount(new QuantityDiscount(), "Wednesday"));
+        var combined1 = new MilkDiscount(new FridayDiscount("Wednesday", new QuantityDiscount()));
         var combined2 = new QuantityDiscount(new FridayDiscount("Monday"));
 
         System.out.println("Discounts for cheese: " + discount.apply(p1));

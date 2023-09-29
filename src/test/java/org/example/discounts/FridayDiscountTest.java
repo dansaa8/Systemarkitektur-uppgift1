@@ -34,7 +34,7 @@ class FridayDiscountTest {
     @Test
     void applyTwoFridayDiscountsReturnDoubleTheDiscount() {
         FridayDiscount friDisc = new FridayDiscount("Friday");
-        FridayDiscount twoFriDiscs = new FridayDiscount(friDisc, "Friday");
+        FridayDiscount twoFriDiscs = new FridayDiscount("Friday", friDisc);
 
         Product p = new Product("Taco", 60, 5);
 

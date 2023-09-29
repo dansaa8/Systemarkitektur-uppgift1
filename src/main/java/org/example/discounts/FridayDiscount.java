@@ -21,7 +21,7 @@ public class FridayDiscount extends BaseDiscount {
         description = "Friday - 10% off";
     } // used for testing
 
-    public FridayDiscount(Discount nextDiscount, String day) {
+    public FridayDiscount(String day, Discount nextDiscount) {
         super(nextDiscount);
         today = day;
         description = "Friday - 10% off";
