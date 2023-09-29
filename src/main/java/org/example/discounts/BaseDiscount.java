@@ -26,14 +26,24 @@ public abstract class BaseDiscount implements Discount {
 
     @Override
     public String getDescription(Product product) {
-        if (nextDiscount != null)
-            return isApplicable(product) ?
-                    this.description + ", " + nextDiscount.getDescription(product) :
-                    nextDiscount.getDescription(product);
+        StringBuilder result = new StringBuilder();
 
-        return isApplicable(product) ?
-                this.description + ", " :
-                "";
+        if (isApplicable(product)) {
+            result.append(this.description);
+
+            if (nextDiscount != null) {
+                String nextDescription = nextDiscount.getDescription(product);
+                if (!nextDescription.isEmpty()) {
+                    result.append(", ");
+                    result.append(nextDescription);
+                }
+            }
+        } else if (nextDiscount != null) {
+            return nextDiscount.getDescription(product);
+        }
+
+        return result.toString();
+
     }
 
 
