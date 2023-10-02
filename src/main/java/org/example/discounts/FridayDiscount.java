@@ -5,27 +5,24 @@ import org.example.Utils;
 
 public class FridayDiscount extends BaseDiscount {
     String today;
-    public FridayDiscount(){
-        today = Utils.getNameOfToday();
-        description = "Friday - 10% off";
+
+    public FridayDiscount() {
+        this(Utils.getNameOfToday());
+    }
+
+    public FridayDiscount(String day) { // used for testing
+        this(day, null);
     }
 
     public FridayDiscount(Discount nextDiscount) {
-        super(nextDiscount);
-        today = Utils.getNameOfToday();
-        description = "Friday - 10% off";
+        this(Utils.getNameOfToday(), nextDiscount);
     }
 
-    public FridayDiscount(String day) {
-        today = day;
-        description = "Friday - 10% off";
-    } // used for testing
-
-    public FridayDiscount(String day, Discount nextDiscount) {
+    public FridayDiscount(String day, Discount nextDiscount) { // used for testing
         super(nextDiscount);
         today = day;
         description = "Friday - 10% off";
-    }// used for testing.
+    }
 
     @Override
     protected boolean isApplicable(Product product) {

@@ -13,17 +13,14 @@ public class CustomDiscount extends BaseDiscount {
             Predicate<Product> isApplicableFunction,
             Function<Product, Double> calculateDiscountFunction
     ) {
-        this.description = description;
-        this.isApplicableFunction = isApplicableFunction;
-        this.calculateDiscountFunction = calculateDiscountFunction;
-        this.nextDiscount = null;
+        this(description, isApplicableFunction, calculateDiscountFunction, null);
     }
 
     public CustomDiscount(
-                          String description,
-                          Predicate<Product> isApplicableFunction,
-                          Function<Product, Double> calculateDiscountFunction,
-                          Discount nextDiscount
+            String description,
+            Predicate<Product> isApplicableFunction,
+            Function<Product, Double> calculateDiscountFunction,
+            Discount nextDiscount
     ) {
         this.description = description;
         this.isApplicableFunction = isApplicableFunction;
