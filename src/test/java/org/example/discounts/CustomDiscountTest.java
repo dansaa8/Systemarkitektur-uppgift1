@@ -84,9 +84,9 @@ public class CustomDiscountTest {
 
         Function<Product, Double> calculateColaDiscount = product -> {
             if(isApplicableToColaQuantityDiscount.test(product)) {
-                int numberOfColas = (int) Math.floor(product.quantity()) / 3;
+                int colaGroupCount = (int) Math.floor(product.quantity()) / 3;
                 double discountPerCollection = 4;
-                return numberOfColas * discountPerCollection;
+                return colaGroupCount * discountPerCollection;
             } else {
                 return 0.0;
             }};
